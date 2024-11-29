@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 20px;
+				font-family: system-ui;
+			}
+
+			.diagram {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.node {
+				background: #f0f9ff;
+				border: 2px solid #3b82f6;
+				border-radius: 8px;
+				padding: 12px;
+				margin: 8px;
+				min-width: 200px;
+				text-align: center;
+				cursor: pointer;
+				transition: all 0.3s;
+				height: fit-content;
+			}
+
+			.node:hover {
+				background: #dbeafe;
+				transform: scale(1.05);
+			}
+
+			.level {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin: 10px 0;
+			}
+
+			.connector {
+				width: 2px;
+				height: 20px;
+				background: #3b82f6;
+				margin: 0 auto;
+			}
+
+			.details {
+				display: none;
+				background: #fff;
+				border: 1px solid #ddd;
+				padding: 10px;
+				margin-top: 5px;
+				border-radius: 4px;
+			}
+
+			.expanded .details {
+				display: block;
+			}
+
+			.title {
+				font-size: 24px;
+				font-weight: bold;
+				text-align: center;
+				margin-bottom: 20px;
+				color: #1e40af;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">Software Requirements Document Structure</div>
+			<div class="diagram">
+				<!-- Main Node -->
+				<div class="level">
+					<div class="node expanded" onclick="toggleDetails(this)">
+						Software Requirements Document
+						<div class="details">
+							Primary document containing all system specifications and
+							requirements
+						</div>
+					</div>
+				</div>
+
+				<div class="connector"></div>
+
+				<!-- Level 1 -->
+				<div class="level">
+					<div class="node expanded" onclick="toggleDetails(this)">
+						1. Preface
+						<div class="details">
+							- Document version control<br />
+							- Approval signatures<br />
+							- Document purpose<br />
+							- Reference documents
+						</div>
+					</div>
+					<div class="node expanded" onclick="toggleDetails(this)">
+						2. Introduction
+						<div class="details">
+							- System overview<br />
+							- Project scope<br />
+							- Stakeholder identification<br />
+							- Business context
+						</div>
+					</div>
+					<div class="node expanded" onclick="toggleDetails(this)">
+						3. Glossary
+						<div class="details">
+							- Technical terms<br />
+							- Abbreviations<br />
+							- Industry terminology<br />
+							- Definitions
+						</div>
+					</div>
+				</div>
+
+				<div class="connector"></div>
+
+				<!-- Level 2 -->
+				<div class="level">
+					<div class="node expanded" onclick="toggleDetails(this)">
+						4. User Requirement Definition
+						<div class="details">
+							- User classes<br />
+							- Use cases<br />
+							- User interfaces<br />
+							- User workflows
+						</div>
+					</div>
+					<div class="node expanded" onclick="toggleDetails(this)">
+						5. System Architecture
+						<div class="details">
+							- System components<br />
+							- Interfaces<br />
+							- Data architecture<br />
+							- Integration points
+						</div>
+					</div>
+					<div class="node expanded" onclick="toggleDetails(this)">
+						6. System Requirement Specification
+						<div class="details">
+							- Functional requirements<br />
+							- Non-functional requirements<br />
+							- Security requirements<br />
+							- Performance specifications
+						</div>
+					</div>
+				</div>
+
+				<div class="connector"></div>
+
+				<!-- Level 3 -->
+				<div class="level">
+					<div class="node expanded" onclick="toggleDetails(this)">
+						7. System Model
+						<div class="details">
+							- Data flow diagrams<br />
+							- State models<br />
+							- Object models<br />
+							- Process flows
+						</div>
+					</div>
+					<div class="node expanded" onclick="toggleDetails(this)">
+						8. System Evolution
+						<div class="details">
+							- Upgrade paths<br />
+							- Scalability requirements<br />
+							- Maintenance procedures<br />
+							- Future integrations
+						</div>
+					</div>
+					<div class="node expanded" onclick="toggleDetails(this)">
+						9. Appendix
+						<div class="details">
+							- Supplementary documentation<br />
+							- Technical specifications<br />
+							- Sample reports<br />
+							- UI mockups
+						</div>
+					</div>
+					<div class="node expanded" onclick="toggleDetails(this)">
+						10. Index
+						<div class="details">
+							- Cross-references<br />
+							- Requirement traceability<br />
+							- Document mapping<br />
+							- Quick reference
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function toggleDetails(element) {
+				element.classList.toggle('expanded');
+			}
+		</script>
+	</body>
+</html>
